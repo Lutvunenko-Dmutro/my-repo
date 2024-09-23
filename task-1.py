@@ -1,4 +1,5 @@
 def roman_to_integer(s: str) -> int:
+    # Словник для зберігання значень римських цифр
     roman_values = {
         'I': 1,
         'V': 5,
@@ -9,19 +10,24 @@ def roman_to_integer(s: str) -> int:
         'M': 1000
     }
     
-    total = 0
-    n = len(s)
+    total = 0  # Змінна для зберігання загальної суми
+    n = len(s)  # Довжина вхідного рядка
     
+    # Проходимо через всі символи римського числа
     for i in range(n):
-        value = roman_values[s[i]]
+        value = roman_values[s[i]]  # Отримуємо значення римської цифри
+        # Якщо поточне значення менше наступного, віднімемо його
         if i < n - 1 and value < roman_values[s[i + 1]]:
             total -= value
         else:
+            # В іншому випадку, додамо значення до загальної суми
             total += value
             
-    return total
+    return total  # Повертаємо загальну суму
 
+# Запитуємо у користувача римське число
 user_input = input("Введіть римське число: ")
+# Викликаємо функцію для конвертації і зберігаємо результат
 result = roman_to_integer(user_input)
+# Виводимо результат
 print(f"Цілочисельне значення: {result}")
-# Ваш код або коментарі 
