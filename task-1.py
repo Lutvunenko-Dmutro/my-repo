@@ -24,3 +24,4 @@ def roman_to_integer(s: str) -> int:
 user_input = input("Введіть римське число: ")
 result = roman_to_integer(user_input)
 print(f"Цілочисельне значення: {result}")
+# Ваш код або коментарі 
